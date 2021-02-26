@@ -35,6 +35,10 @@ module.exports = {
   'paths.theme.src.scripts': (config) =>
     path.join(config.get('paths.theme.src'), 'scripts'),
 
+  // Source styles directory for theme
+  'paths.theme.src.styles': (config) =>
+  path.join(config.get('paths.theme.src'), 'styles'),
+
   // Source snippets directory
   'paths.theme.src.snippets': (config) =>
     path.join(config.get('paths.theme.src'), 'snippets'),

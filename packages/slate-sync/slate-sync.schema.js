@@ -1,4 +1,4 @@
-const commonPaths = require('@shopify/slate-config/common/paths.schema');
+const commonPaths = require('@bigsigmadevelopment/slate-config/common/paths.schema');
 
 module.exports = {
   ...commonPaths,

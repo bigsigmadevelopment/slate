@@ -5,7 +5,7 @@ const flatten = require('array-flatten');
 const minimatch = require('minimatch');
 const {argv} = require('yargs');
 const {getIgnoreFilesValue} = require('@shopify/slate-env');
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 const config = new SlateConfig(require('../../slate-tools.schema'));
 

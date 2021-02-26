@@ -9,7 +9,7 @@ describe('themelint()', () => {
 
   test(`executes the themelint bin specified in 'themelint.bin' config`, () => {
     const {themelint} = require('../index');
-    const SlateConfig = require('@shopify/slate-config');
+    const SlateConfig = require('@bigsigmadevelopment/slate-config');
     const config = new SlateConfig(require('../../../slate-tools.schema'));
 
     themelint();

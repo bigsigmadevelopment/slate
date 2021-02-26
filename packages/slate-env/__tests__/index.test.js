@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const dotenv = require('dotenv');
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 const slateEnv = require('../index');
 const config = new SlateConfig(require('../slate-env.schema'));

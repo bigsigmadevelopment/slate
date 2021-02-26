@@ -5,17 +5,29 @@ const config = new SlateConfig(require('../../../../slate-tools.schema'));
 
 module.exports = function() {
   const entrypoints = {};
-
-  fs.readdirSync(config.get('paths.theme.src.layout')).forEach((file) => {
+  fs.readdirSync(config.get('paths.theme.src.scripts')).forEach((file) => {
     const name = path.parse(file).name;
     const jsFile = path.join(
       config.get('paths.theme.src.scripts'),
-      'layout',
       `${name}.js`,
     );
+
     if (fs.existsSync(jsFile)) {
-      entrypoints[`layout.${name}`] = jsFile;
+      entrypoints[`${name}_script`] = jsFile;
     }
   });
+
+  fs.readdirSync(config.get('paths.theme.src.styles')).forEach((file) => {
+    const name = path.parse(file).name;
+    const scssFile = path.join(
+      config.get('paths.theme.src.styles'),
+      `${name}.scss`,
+    );
+
+    if (fs.existsSync(scssFile)) {
+      entrypoints[`${name}_style`] = scssFile;
+    }
+  });
+
   return entrypoints;
 };

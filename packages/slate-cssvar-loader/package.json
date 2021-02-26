@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/Shopify/slate#readme",
   "dependencies": {
-    "@shopify/slate-config": "1.0.0-beta.14",
+    "@bigsigmadevelopment/slate-config": "file:../slate-config",
     "loader-utils": "^1.1.0"
   },
   "devDependencies": {

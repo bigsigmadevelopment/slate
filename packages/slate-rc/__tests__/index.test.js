@@ -1,4 +1,4 @@
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 jest.mock('../slate-rc.schema');
 

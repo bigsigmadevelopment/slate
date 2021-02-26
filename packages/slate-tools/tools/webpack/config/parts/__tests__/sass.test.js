@@ -7,7 +7,7 @@ test(`passes 'webpack.cssnano.settings' config to cssnano`, () => {
   jest.mock('cssnano');
 
   const cssnano = require('cssnano');
-  const SlateConfig = require('@shopify/slate-config');
+  const SlateConfig = require('@bigsigmadevelopment/slate-config');
   const config = new SlateConfig(require('../../../../../slate-tools.schema'));
 
   require('../sass');
@@ -18,7 +18,7 @@ test(`passes 'webpack.cssnano.settings' config to cssnano`, () => {
 });
 
 test(`passes 'webpack.postcss.plugins' config to PostCSS Loader`, () => {
-  const SlateConfig = require('@shopify/slate-config');
+  const SlateConfig = require('@bigsigmadevelopment/slate-config');
   const config = new SlateConfig(require('../../../../../slate-tools.schema'));
 
   const part = require('../sass');
@@ -32,7 +32,7 @@ test(`passes 'webpack.postcss.plugins' config to PostCSS Loader`, () => {
 });
 
 test(`passes 'webpack.sourceMap.styles' config to loaders`, () => {
-  const SlateConfig = require('@shopify/slate-config');
+  const SlateConfig = require('@bigsigmadevelopment/slate-config');
   const config = new SlateConfig(require('../../../../../slate-tools.schema'));
 
   const part = require('../sass');

@@ -4,8 +4,8 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const SlateConfig = require('@shopify/slate-config');
-const SlateTagPlugin = require('@shopify/slate-tag-webpack-plugin');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
+const SlateTagPlugin = require('@bigsigmadevelopment/slate-tag-webpack-plugin');
 
 const babel = require('./parts/babel');
 const sass = require('./parts/sass');
@@ -15,6 +15,7 @@ const css = require('./parts/css');
 
 const packageJson = require('../../../package.json');
 const getChunkName = require('../get-chunk-name');
+const getGeneralEntrypoints = require('./utilities/get-general-entrypoints');
 const getLayoutEntrypoints = require('./utilities/get-layout-entrypoints');
 const getTemplateEntrypoints = require('./utilities/get-template-entrypoints');
 const HtmlWebpackIncludeLiquidStylesPlugin = require('../html-webpack-include-chunks');
@@ -60,6 +61,7 @@ module.exports = merge([
         },
         // necessary to consistently work with multiple chunks via CommonsChunkPlugin
         chunksSortMode: 'dependency',
+        liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
       }),
@@ -78,6 +80,7 @@ module.exports = merge([
         },
         // necessary to consistently work with multiple chunks via CommonsChunkPlugin
         chunksSortMode: 'dependency',
+        liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
       }),

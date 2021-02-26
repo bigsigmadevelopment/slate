@@ -9,7 +9,7 @@ describe('Prettier()', () => {
 
   test(`executes the Prettier bin from the path specified in the 'prettier.bin' config`, () => {
     const {prettier} = require('../index');
-    const SlateConfig = require('@shopify/slate-config');
+    const SlateConfig = require('@bigsigmadevelopment/slate-config');
     const config = new SlateConfig(require('../../../slate-tools.schema'));
 
     prettier();
@@ -23,7 +23,7 @@ describe('Prettier()', () => {
 
   test(`executes Prettier with the --config flag set to 'prettier.config' config`, () => {
     const {prettier} = require('../index');
-    const SlateConfig = require('@shopify/slate-config');
+    const SlateConfig = require('@bigsigmadevelopment/slate-config');
     const config = new SlateConfig(require('../../../slate-tools.schema'));
 
     prettier();
@@ -36,7 +36,7 @@ describe('Prettier()', () => {
 
   test(`executes Prettier with the --ignore-path flag set to 'prettier.ignorePath' config`, () => {
     const {prettier} = require('../index');
-    const SlateConfig = require('@shopify/slate-config');
+    const SlateConfig = require('@bigsigmadevelopment/slate-config');
     const config = new SlateConfig(require('../../../slate-tools.schema'));
     prettier();
     expect(exec).toHaveBeenCalledWith(

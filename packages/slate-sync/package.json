@@ -1,18 +1,18 @@
 {
-  "name": "@shopify/slate-sync",
+  "name": "@bigsigmadevelopment/slate-sync",
   "version": "1.0.0-beta.16",
   "description": "Slate's Shopify API client which handles all theme development requests",
-  "repository": "https://github.com/Shopify/slate/tree/1.x/packages/slate-sync",
+  "repository": "https://github.com/bigsigmadevelopment/slate/tree/1.x/packages/slate-sync",
   "license": "MIT",
   "main": "index.js",
   "author": "Shopify",
   "bugs": {
-    "url": "https://github.com/Shopify/slate/issues"
+    "url": "https://github.com/bigsigmadevelopment/slate/issues"
   },
   "engine": ">=8.9.4",
   "dependencies": {
     "@shopify/slate-analytics": "1.0.0-beta.16",
-    "@shopify/slate-config": "1.0.0-beta.14",
+    "@bigsigmadevelopment/slate-config": "file:../slate-config",
     "@shopify/slate-env": "1.0.0-beta.16",
     "@shopify/themekit": "0.6.12",
     "array-flatten": "^2.1.1",

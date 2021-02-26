@@ -1,4 +1,4 @@
-# @shopify/slate-config
+# @bigsigmadevelopment/slate-config
 
 Handles all of Slate's configurable options. Slate packages can declare options in schema files and access the default values of these options in their code. Slate Config will also look for a `slate.config.js` file in the root of a Slate theme project and use any key/values declared in it to override default values declared in Slate packages.
 
@@ -8,7 +8,7 @@ The format of Slate configurations relies on a flat object structure using uniqu
 
 ```js
 const path = require('path');
-const commonPaths = require('@shopify/slate-config/common/paths.schema');
+const commonPaths = require('@bigsigmadevelopment/slate-config/common/paths.schema');
 
 module.exports = {
   // You can divide your config items across multiple files, import them, and then
@@ -36,7 +36,7 @@ module.exports = {
 The main class constructor which consumes a config schema and returns a config instance.
 
 ```
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 const config = new SlateConfig(require('../../../slate-tools.schema'));
 ```
 

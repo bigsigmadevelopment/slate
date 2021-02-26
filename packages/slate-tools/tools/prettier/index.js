@@ -1,7 +1,7 @@
 const fs = require('fs');
 const {exec} = require('child_process');
 const {promisify} = require('util');
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 const config = new SlateConfig(require('../../slate-tools.schema'));
 

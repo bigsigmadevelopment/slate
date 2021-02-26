@@ -3,7 +3,7 @@ const figures = require('figures');
 const https = require('https');
 const themekit = require('@shopify/themekit').command;
 const slateEnv = require('@shopify/slate-env');
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 const config = new SlateConfig(require('./slate-sync.schema'));
 

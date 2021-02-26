@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const SlateConfig = require('@shopify/slate-config');
+const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
 const core = require('./parts/core');
 const babel = require('./parts/babel');
@@ -11,6 +11,7 @@ const entry = require('./parts/entry');
 const sass = require('./parts/sass');
 const css = require('./parts/css');
 
+const getGeneralEntrypoints = require('./utilities/get-general-entrypoints');
 const getLayoutEntrypoints = require('./utilities/get-layout-entrypoints');
 const getTemplateEntrypoints = require('./utilities/get-template-entrypoints');
 const HtmlWebpackIncludeLiquidStylesPlugin = require('../html-webpack-include-chunks');
@@ -47,6 +48,7 @@ module.exports = merge([
           removeAttributeQuotes: false,
         },
         isDevServer: true,
+        liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
       }),
@@ -65,6 +67,7 @@ module.exports = merge([
         // necessary to consistently work with multiple chunks via CommonsChunkPlugin
         chunksSortMode: 'dependency',
         isDevServer: true,
+        liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
       }),
