@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/shopify/slate",
   "dependencies": {
-    "@bigsigmadevelopment/slate-config": "file:../slate-config",
+    "@bigsigmadevelopment/slate-config": "1.0.0-beta.15",
     "@shopify/slate-error": "1.0.0-beta.14",
     "fs-extra": "^5.0.0",
     "mock-fs": "^4.4.2",

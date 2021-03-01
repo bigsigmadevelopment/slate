@@ -3,6 +3,9 @@ const {createServer} = require('https');
 const createHash = require('crypto').createHash;
 const SlateConfig = require('@bigsigmadevelopment/slate-config');
 
+const chalk = require('chalk');
+const figures = require('figures');
+
 const App = require('./app');
 const Client = require('./client');
 const {sslKeyCert, isHotUpdateFile} = require('../utilities');
@@ -48,7 +51,6 @@ module.exports = class DevServer {
 
   _onCompileDone(stats) {
     const files = this._getAssetsToUpload(stats);
-
     return this.client.sync(files, stats);
   }
 
@@ -82,12 +84,11 @@ module.exports = class DevServer {
     const assets = Object.entries(stats.compilation.assets);
     const chunks = stats.compilation.chunks;
 
-    return (
+    let files = (
       assets
         .filter(([key, asset]) => {
           return (
             asset.emitted &&
-            !this._isChunk(key, chunks) &&
             !isHotUpdateFile(key) &&
             this._hasAssetChanged(key, asset)
           );
@@ -96,7 +97,12 @@ module.exports = class DevServer {
         .map(([key, asset]) => {
           return asset.existsAt.replace(config.get('paths.theme.dist'), '');
         })
-    );
+    )
+
+    console.log(chalk.magenta(`\n${figures.arrowUp}  Files to upload to Shopify...\n`));
+    console.log(files)
+
+    return files;
   }
 
   _updateAssetHash(key, asset) {

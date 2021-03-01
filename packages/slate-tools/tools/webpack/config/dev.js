@@ -47,7 +47,7 @@ module.exports = merge([
           removeComments: true,
           removeAttributeQuotes: false,
         },
-        isDevServer: true,
+        isDevServer: false,
         liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
@@ -66,7 +66,7 @@ module.exports = merge([
         },
         // necessary to consistently work with multiple chunks via CommonsChunkPlugin
         chunksSortMode: 'dependency',
-        isDevServer: true,
+        isDevServer: false,
         liquidGeneral: getGeneralEntrypoints(),
         liquidTemplates: getTemplateEntrypoints(),
         liquidLayouts: getLayoutEntrypoints(),
